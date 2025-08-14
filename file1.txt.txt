@@ -13,17 +13,17 @@ public class AddToCartProgram {
     public static void main(String[] args) {
   //new line added 
         // ============================
-        // Step 1: WebDriver Setup
+        // Step 1: WebDriver Setup driver setup id done in master branch
         // ============================
                System.setProperty("webdriver.chrome.driver", "path/to/your/chromedriver.exe");
 
         // Initialize the ChromeDriver. This opens a new browser window.
         WebDriver driver = new ChromeDriver();
 
-        // Maximize the browser window for better visibility.
+        // Maximize the browser window for better visibility. browser maximized in master branch
         driver.manage().window().maximize();
 
-                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                driver.managed().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         // ============================
         // Step 2: Navigate and Interact
