@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AddToCartProgram {
-
+// 
     public static void main(String[] args) {
   //new line added 
         // ============================
@@ -64,7 +64,7 @@ public class AddToCartProgram {
             } else {
                 System.out.println("❌ Failed to add product to cart. Expected count: 1, Actual count: " + cartText);
             }
-
+// new execption
         } catch (Exception e) {
             // Catch any exceptions that might occur during the test, such as `NoSuchElementException`
             // and print the stack trace for debugging.
@@ -73,6 +73,7 @@ public class AddToCartProgram {
         } finally {
                        System.out.println("Test complete. Closing the browser.");
             driver.quit();
+driver.findElement(By.xpath("id")).click();
         }
     }
 }
