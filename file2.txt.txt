@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class StreamSortExample {
 
     public static void main(String[] args) {
-
+       // new line in file 2
         // ===========================================
         // Example 1: Sorting a list of integers
         // ===========================================
@@ -47,9 +47,9 @@ public class StreamSortExample {
         fruits.add("Cherry");
         fruits.add("Date");
         System.out.println("Original List: " + fruits);
-
+// new line 
         // Sort the strings in natural (alphabetical) order.
-        List<String> sortedFruits = fruits.stream()
+        List<String> sortedFruitstest = fruits.stream()
                                           .sorted()
                                           .collect(Collectors.toList());
         System.out.println("Sorted List (Alphabetical): " + sortedFruits);
