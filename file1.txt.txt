@@ -1,0 +1,78 @@
+// Import the necessary Selenium libraries for WebDriver, By class, and WebDriverWait
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
+public class AddToCartProgram {
+
+    public static void main(String[] args) {
+
+        // ============================
+        // Step 1: WebDriver Setup
+        // ============================
+               System.setProperty("webdriver.chrome.driver", "path/to/your/chromedriver.exe");
+
+        // Initialize the ChromeDriver. This opens a new browser window.
+        WebDriver driver = new ChromeDriver();
+
+        // Maximize the browser window for better visibility.
+        driver.manage().window().maximize();
+
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        // ============================
+        // Step 2: Navigate and Interact
+        // ============================
+        try {
+                       driver.get("https://example-ecommerce-site.com");
+
+                       System.out.println("Navigating to the product page...");
+            WebElement productCard = driver.findElement(By.cssSelector(".product-card:nth-child(1)"));
+            
+            // Scroll the product into view. This is useful if the element is not visible.
+            ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productCard);
+            
+            // Locate the "Add to Cart" button for the product.
+            // We are using a relative XPath to find the button inside the product card.
+            // This makes the locator more specific and reliable.
+            WebElement addToCartButton = productCard.findElement(By.xpath(".//button[text()='Add to Cart']"));
+            
+            // Click the "Add to Cart" button.
+            System.out.println("Clicking 'Add to Cart' button...");
+            addToCartButton.click();
+            
+            // ============================
+            // Step 3: Verification
+            // ============================
+            // Use an explicit wait to wait for a specific condition,
+            // like the cart counter updating. This is more precise than an implicit wait.
+            System.out.println("Waiting for cart to update...");
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            
+            // Wait until the cart icon element is present and the text is '1'.
+            WebElement cartCount = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cart-count")));
+            
+            // Verify that the cart now contains one item.
+            String cartText = cartCount.getText();
+            if (cartText.equals("1")) {
+                System.out.println("✅ Product successfully added to cart. Cart count is: " + cartText);
+            } else {
+                System.out.println("❌ Failed to add product to cart. Expected count: 1, Actual count: " + cartText);
+            }
+
+        } catch (Exception e) {
+            // Catch any exceptions that might occur during the test, such as `NoSuchElementException`
+            // and print the stack trace for debugging.
+            System.err.println("An error occurred during the automation process: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+                       System.out.println("Test complete. Closing the browser.");
+            driver.quit();
+        }
+    }
+}
