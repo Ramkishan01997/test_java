@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class AddToCartProgram {
-// 
+// added line in feature1 branch in file1 
     public static void main(String[] args) {
   //new line added 
         // ============================
-        // Step 1: WebDriver Setup
+        // Step 1: WebDriver Setup// added new code in feature 1 branch
         // ============================
                System.setProperty("webdriver.chrome.driver", "path/to/your/chromedriver.exe");
 
