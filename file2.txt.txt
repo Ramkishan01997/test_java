@@ -6,10 +6,10 @@ import java.util.stream.Collectors;
 
 public class StreamSortExample {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { added line in master branch commit2
        // new line in file 2
         // ===========================================
-        // Example 1: Sorting a list of integers
+        // Example 1: reversin a list of integers
         // ===========================================
         System.out.println("--- Sorting a list of Integers ---");
 
