@@ -11,7 +11,7 @@ import java.time.Duration;
 public class AddToCartProgram {
 
     public static void main(String[] args) {
-
+  //new line added 
         // ============================
         // Step 1: WebDriver Setup
         // ============================
@@ -33,7 +33,7 @@ public class AddToCartProgram {
 
                        System.out.println("Navigating to the product page...");
             WebElement productCard = driver.findElement(By.cssSelector(".product-card:nth-child(1)"));
-            
+            //new line 2
             // Scroll the product into view. This is useful if the element is not visible.
             ((org.openqa.selenium.JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", productCard);
             
