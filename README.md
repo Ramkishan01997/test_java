@@ -3,10 +3,7 @@ create  new jenkins pipeline to run selenium automation
 clone the code from git
 clean and build the ciode
 run the code in local and remote
-<<<<<<< HEAD
 
-=======
->>>>>>> d44d105 (new changes)
 Your Awesome Selenium Project
 A brief, one-paragraph description of what this project does. For example, "This is an automated testing suite for the 'Sauce Demo' e-commerce website, written in Python with the Selenium WebDriver library. It includes tests for user login, product selection, and checkout functionality."
 
